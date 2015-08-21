@@ -30,6 +30,12 @@ $(function() {
 		{
 			result = calc(princ, interest, time);
 			display(princ, result);
+
+			//set inputs in case they entered non-numbers;
+
+			$(".principal").val(princ);
+			$(".interest").val(interest);
+			$(".loan-time").val(time);
 		}
 
 	});
@@ -41,6 +47,8 @@ $(function() {
 		$(".loan-time").val("");
 		$(".interest-paid").html("");
 		$(".total-paid").html("");
+
+		$("input").css("border", "1px solid silver");
 
 	});
 
@@ -61,8 +69,8 @@ $(function() {
 		i = Number(i);
 		p = p + i;
 		p = p.toFixed(2);
-		$(".interest-paid").html(i);
-		$(".total-paid").html(p);
+		$(".interest-paid").html("$ " + i);
+		$(".total-paid").html("$ " + p);
 	}
 
 
